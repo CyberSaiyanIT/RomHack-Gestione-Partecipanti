@@ -9,17 +9,21 @@ Per installare la componente server EventMan prima di tutto installare ```mongo-
 
 e le librerie necessarie
 
-```sudo pip3 install tornado
+```
+sudo pip3 install tornado
 sudo pip3 install pymongo
-sudo pip3 install python-dateutil```
+sudo pip3 install python-dateutil
+```
 
 Avviare poi il server come segue
 
-```$ ./start-server.sh 
+```
+$ ./start-server.sh 
 Starting EventMan RomHack edition...
 ----------
 [I 190709 10:42:55 eventman_server:1334] Start serving on https://127.0.0.1:5242
-[...]```
+[...]
+```
 
 A questo punto il server è accessibile all'indirizzo ```https://127.0.0.1:5242```
 
@@ -34,7 +38,8 @@ Editare il file [romhack_checkin.ini](checkin/romhack_checkin.ini) impostando
 - ```id``` dell'evento EventMan che si può recuperato dall'interfaccia web
 
 Su tutti i client dove abbiamo collegato i QR reader copiare la cartella ```checkin/``` ed avviare lo script 
-```$ ./romhack_checkin.py
+```
+$ ./romhack_checkin.py
 INFO:romhack_checkin:connection to eventman at https://127.0.0.1:5242/v1.0/login established
 
 Input QR code: <scansionare i vari QR code con il lettore>
