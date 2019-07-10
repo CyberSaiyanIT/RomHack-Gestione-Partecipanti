@@ -48,3 +48,5 @@ Input QR code: <scansionare i vari QR code con il lettore>
 
 ## Verifica dei checkin in real-time
 Mentre si fa il checking collegarsi ad EventMan alla URL ```https://127.0.0.1:5242/#!/event/<ID EVENTO>/tickets``` per verificare i checkin effettuati ed effettuare altre operazioni sui partecipanti (ricerche etc etc)
+
+Ad ogni checkin effettuato dal QR Reader USB l'interfaccia web aggiornerà automaticamente i contatori degli accessi
