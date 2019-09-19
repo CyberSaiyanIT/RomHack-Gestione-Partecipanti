@@ -117,14 +117,15 @@ class Connector():
         logger.info('connection to eventman at %s established' % self.login_url)
 
     def checkin(self, code):
-        msg = 'scanning code %s: ' % code
-        limit_field = None
+        msg = '\n  Scanned QR code: %s' % code
+        remove_last_digits = None
         try:
-            limit_field = self.cfg['event'].getint('limit_field')
+            remove_last_digits = self.cfg['event'].getint('remove_last_digits')
         except:
             pass
-        if limit_field:
-            code = code[:limit_field]
+        if remove_last_digits:
+            code = code[:len(code)-remove_last_digits]
+        msg += '\n  Code sent to Eventman: %s' % code
         _searchFor = '%s:%s' % (cfg['event']['field'], code)
         params = {cfg['event']['field']: code, '_errorMessage': 'code: %s' % code, '_searchFor': _searchFor}
         checkin_url = self.checkin_url + '?' + urllib.parse.urlencode(params)
@@ -133,10 +134,10 @@ class Connector():
         error = False
         try:
             req.raise_for_status()
-            msg += 'ok'
+            msg += '\n  Checkin OK'
         except requests.exceptions.HTTPError:
             error = True
-            msg += 'error: %s' % req.json().get('message')
+            msg += '\n  Checkin ERROR: %s' % req.json().get('message')
         if not error:
             logger.info(msg)
         else:
