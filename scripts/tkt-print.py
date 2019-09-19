@@ -14,8 +14,8 @@ LABEL_HEIGHT = 1872
 FONT_TEXT = 'IBMPlexMono-Medium.ttf'
 PRINTER_NAME = 'DYMO-LabelWriter-450'
 
-LINE1 = 'Alessandro Barberini'
-LINE2 = 'akab'
+LINE1 = 'name'
+LINE2 = 'nick'
 LINE3 = 'Cyber Saiyan'
 
 def _get_resource(filename):
