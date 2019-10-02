@@ -33,6 +33,7 @@ import datetime
 import requests
 import configparser
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from playsound import playsound
 
 TIMEOUT = 3
 
@@ -135,6 +136,7 @@ class Connector():
         try:
             req.raise_for_status()
             msg += '\n  Checkin OK'
+            playsound("checkin.wav")
         except requests.exceptions.HTTPError:
             error = True
             msg += '\n  Checkin ERROR: %s' % req.json().get('message')
