@@ -13,6 +13,7 @@ e le librerie necessarie
 sudo pip3 install tornado
 sudo pip3 install pymongo
 sudo pip3 install python-dateutil
+sudo pip3 install playsound
 ```
 
 Avviare poi il server come segue
@@ -45,6 +46,7 @@ INFO:romhack_checkin:connection to eventman at http://127.0.0.1:5242/v1.0/login 
 Input QR code: <scansionare i vari QR code con il lettore>
 [...]
 ```
+Ogni volta che un checkin andrà a buon fine sarà riprodotto un suono
 
 ## Verifica dei checkin in real-time
 Mentre si fa il checking collegarsi ad EventMan alla URL ```https://127.0.0.1:5242/#!/event/<ID EVENTO>/tickets``` per verificare i checkin effettuati ed effettuare altre operazioni sui partecipanti (ricerche etc etc)
