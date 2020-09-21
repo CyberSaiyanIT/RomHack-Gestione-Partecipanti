@@ -3,9 +3,9 @@
 Questo repo contiene una personalizzazione del software [EventMan](https://github.com/raspibo/eventman/) per l'evento [RomHack](https://www.romhack.io)
 
 ## Installazione EventMan
-Per installare la componente server EventMan prima di tutto installare ```mongo-db``` (testato fino a Ubuntu 19.04)
+Per installare la componente server EventMan prima di tutto installare ```mongo-db``` (testato con Ubuntu 20.04)
 
-```sudo apt install python-requests python-configparser python-dateutil python-tornado python-bson python-cups python-pip python-pymongo mongodb-server```
+```sudo apt install python3-requests python3-dateutil python3-tornado python3-bson python3-cups python3-pip python3-pymongo mongodb-server```
 
 e le librerie necessarie
 
@@ -49,6 +49,6 @@ Input QR code: <scansionare i vari QR code con il lettore>
 Ogni volta che un checkin andrà a buon fine sarà riprodotto un suono
 
 ## Verifica dei checkin in real-time
-Mentre si fa il checking collegarsi ad EventMan alla URL ```https://127.0.0.1:5242/#!/event/<ID EVENTO>/tickets``` per verificare i checkin effettuati ed effettuare altre operazioni sui partecipanti (ricerche etc etc)
+Mentre si fa il checking collegarsi ad EventMan alla URL ```http://127.0.0.1:5242/#!/event/<ID EVENTO>/tickets``` per verificare i checkin effettuati ed effettuare altre operazioni sui partecipanti (ricerche etc etc)
 
 Ad ogni checkin effettuato dal QR Reader USB l'interfaccia web aggiornerà automaticamente i contatori degli accessi
